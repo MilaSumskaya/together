@@ -21,6 +21,18 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('temp/header');
-		$this->load->view('temp/navbar');
+		if ($this->session->userdata('role') === '1'){
+            $this->load->view('temp/navbar_user');
+        }
+        else if ($this->session->userdata('role') === '2'){
+            $this->load->view('temp/navbar_admin');
+        } else {
+		    $this->load->view('temp/navbar');
+        }
+		$this->load->view('index');
+        $this->load->model('application_model');
+        $data['app'] = $this->application_model->select_application();
+        $this->load->view('application',$data);
+        $this->load->view('temp/footer');
 	}
 }
