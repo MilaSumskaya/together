@@ -10,6 +10,7 @@
       <link href="css/style_reg.css" rel="stylesheet">
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script src="js/reg.js"></script>
 
     <title>Сделаем лучше вместе</title>
 </head>
