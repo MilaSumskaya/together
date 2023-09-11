@@ -1,5 +1,5 @@
 <div class="overlay">
-<form action="main/reg" method="POST">
+<form action="/main/regist" method="POST">
    <div class="con">
    <header class="head-form">
       <h2>Регистрация</h2>

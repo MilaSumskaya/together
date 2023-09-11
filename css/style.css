@@ -56,11 +56,14 @@ body {
     list-style: none;
     padding: 0 30px;
     margin: 0;
-    margin-top: 39%;
     font-size: 18px;
     text-align: center;
     position: relative;
     background: white;
+  }
+  .logo{
+    width: 100px;
+    height: auto;
   }
   .menu-main li {
     display: inline-block;
