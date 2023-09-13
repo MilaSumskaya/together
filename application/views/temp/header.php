@@ -15,6 +15,7 @@
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/reg.js"></script>
+      <script src="js/modal.js"></script>
 
     <title>Сделаем лучше вместе</title>
 </head>

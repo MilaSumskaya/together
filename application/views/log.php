@@ -1,5 +1,5 @@
 <div class="overlay">
-<form action="/main/log" method="POST">
+<form action="/main/log" method="POST" class="form">
    <div class="con">
    <header class="head-form">
       <h2>Авторизация</h2>

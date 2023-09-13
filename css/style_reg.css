@@ -13,7 +13,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat; */
 }
-form {
+.form {
     width: 450px;
     min-height: 500px;
     height: auto;

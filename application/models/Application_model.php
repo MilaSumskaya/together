@@ -7,5 +7,17 @@
             $result = $this->db->query($sql);
            return $result->result_array();
         }
+        public function ins_application($id_user, $app_name, $description, $before_photo, $category){
+            $sql = "call insert_application(?,?,?,?,?)";
+            $result = $this->db->query($sql, array($id_user, $app_name, $description, $before_photo, $category));
+            
+            return $this->db->insert_id();
+        }
+        //Удалить заявку у пользователя
+        public function del($id){
+            $sql = "DELETE FROM `application` WHERE application.id = ?";
+
+            $this->db->query($sql, array($id));
+        }
     }
 ?>

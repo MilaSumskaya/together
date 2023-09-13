@@ -14,8 +14,42 @@ class User extends CI_Controller {
 		    $this->load->view('temp/navbar');
         }
         $this->load->model('user_model');
-        $data['app'] = $this->user_model->select_application($id_user);
+        $data['appl'] = $this->user_model->select_application($id_user);
         $this->load->view('personal_area',$data);
+        
+        $this->load->model('category_model');
+        $datac['categories'] = $this->category_model->select_category();
+        $this->load->view('new_application', $datac);
         $this->load->view('temp/footer');
     }
+
+    public function new_app(){
+        if (!empty($_POST)){
+            if (isset($_FILES['before_photo']) && $_FILES['before_photo']['error'] === UPLOAD_ERR_OK) {
+            $id_user = $this->session->userdata('id_user');
+            $app_name = $_POST['app_name'];
+            $description = $_POST['description'];
+            $category = $_POST['category'];
+            
+            $before_photo = $_FILES['before_photo']['name'];
+            var_dump($before_photo);
+    
+            $this->load->model('application_model');
+            $user = $this->application_model->ins_application($id_user, $app_name, $description, $before_photo, $category);
+            $photoPath = 'img/' . $before_photo;
+            move_uploaded_file($_FILES['before_photo']['tmp_name'], $photoPath);
+
+            }
+        }
+    }
+    //Удалить заявку 
+public function del() {
+    if(!empty($_GET['id'])){
+        $id = $_GET['id'];
+        $this->load->model('application_model');
+        $this->application_model->del($id);
+        
+        redirect('user/personal_area');
+    }
+}
 }

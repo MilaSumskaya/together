@@ -45,7 +45,7 @@ class Main extends CI_Controller {
 			    redirect('user/personal_area');
 			}
 			else if ($this->session->userdata('role') == 2){
-				redirect('admin/new_application');
+				redirect('admin/user_application');
 		}
 	}
 		}
@@ -71,6 +71,6 @@ class Main extends CI_Controller {
 	}
     public function logout() {
         $this->session->sess_destroy();
-        redirect('main/log');
+        redirect('main/');
     }
 }
