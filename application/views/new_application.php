@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="before_photo" class="form-label">Фото проблемы</label>
-            <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
             <input type="file" class="form-control" id="before_photo" name="before_photo" accept="image/*" required>
         </div>
 

@@ -1,39 +1,15 @@
 $(document).ready(function() {
-    $('.delete-button').click(function(e) {
-        e.preventDefault();
-        var url = $(this).attr('href');
+    $('#applModal').on('show.bs.modal', function (event) {
+        // кнопка, которая вызывает модаль
+         var button = $(event.relatedTarget) 
+        // получим  data-id_user атрибут
+          var id = button.data('id') 
+        // получим  data-fio атрибут
+        //   var name = button.data('name');
+           // Здесь изменяем содержимое модали
+          var modal = $(this);
+        //  modal.find('.modal-title').text('Вы действительно хотите удалить заявку '+name+' '+id);
+         modal.find('.modal-body #id').val(id);
+        })
         
-        $('#confirmDeleteModal').modal('show');
-        
-        $('#deleteButton').click(function() {
-            window.location.href = url;
-        });
-    });
-});
-$(document).ready(function() {
-    $('.deleteButton').click(function() {
-        var zayavkaId = $(this).data('id');
-        $('#deleteModal').modal('show');
-        
-        $('#confirmDelete').click(function() {
-            // Отправка AJAX-запроса на удаление заявки
-            $.ajax({
-                url: 'user/del',
-                type: 'POST',
-                data: {id: zayavkaId},
-                success: function(response) {
-                    // Вывести сообщение об успешном удалении или обработать другие действия
-                    alert('Заявка успешно удалена');
-                }
-            });
-            
-            // Закрыть модальное окно после удаления
-            $('#deleteModal').closeModal();
-        });
-        
-        $('#cancelDelete').click(function() {
-            // Закрыть модальное окно без удаления заявки
-            $('#deleteModal').closeModal();
-        });
-    });
 });

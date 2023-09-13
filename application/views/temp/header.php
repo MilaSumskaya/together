@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link href="css/style.css" rel="stylesheet">
       <link href="css/style_reg.css" rel="stylesheet">
-      <script src="js/jquery-3.3.1.min.js"></script>
+      <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
       <script src="js/bootstrap.min.js"></script>
       <script src="js/reg.js"></script>
       <script src="js/modal.js"></script>
