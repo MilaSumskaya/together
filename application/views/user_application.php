@@ -35,25 +35,23 @@
         if ($row['status'] == 0){
             echo '
           <td>Новая</td>
-          <td>
-            <a><button type="button" class="btn btn-success">Принять</button></a>
-            <a><button type="button" class="btn btn-primary">Отказаться</button></a>
-            </td>
+          <td><a href="admin/upd_app_two?id='.$row['id'].'"><button type="button" class="btn btn-success">✓</button></a>
+            <button type="button" class="btn btn-danger"  data-id="'.$row['id'].'" data-bs-toggle="modal" data-bs-target="#reasonModal">✗</button></td>
           </tr>';
         } else if ($row['status'] == 1){
           echo '
         <td>Решена</td>
-        <td>Нет</td>
-        </tr>';
+        <td>'.$row['completion_date'].'</td></tr>';
       } else if ($row['status'] == 2){
         echo '
-      <td>Отклонена</td>
+      <td>Принята</td>
+      <td><button type="button" class="btn btn-success"  data-id="'.$row['id'].'" data-bs-toggle="modal" data-bs-target="#successModal">Выполнена</button></td>
       </tr>';
-    } else if ($row['status'] == 2 ){
+    }   else if ($row['status'] == 3){
       echo '
     <td>Отклонена</td>
-    </tr>';
-    } 
+    <td>'.$row['completion_date'].'</td></tr>';
+  };  
     }
     ?>
         </tbody>

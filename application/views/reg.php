@@ -16,12 +16,12 @@
       <br>
       <input class="form-input" type="password" placeholder="Повтор пароля" id="twopassword"  name="twopassword" required>
       <br>
-      <input type="checkbox" id="input" required> Согласие на обработку <br>персональных данных
+      <input type="checkbox" id="pers" value="1"> Согласие на обработку <br>персональных данных
      
      
      
       <br>
-      <button class="log-in" type="submit" id="submit">Зарегистрироваться</button>
+      <button class="log-in but" type="submit" id="submit">Зарегистрироваться</button>
    </div>
      
   </div>

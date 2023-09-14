@@ -22,11 +22,11 @@
      
      
       <br>
-      <button class="log-in" type="submit">Войти</button>
+      <button class="log-in but" type="submit">Войти</button>
    </div>
 
    <div class="other">
-      <button class="btn submits sign-up">Зарегистрироваться
+      <button class="btn submits sign-up" id="button">Зарегистрироваться
       <i class="fa fa-user-plus" aria-hidden="true"></i>
       </button>
    </div>

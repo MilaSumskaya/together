@@ -27,5 +27,20 @@
                     $result = $this->db->query($sql);
                    return $result->result_array();
                 }
+        
+        public function upd_status_two($id){
+            $sql = "UPDATE `application` SET `status`=2 WHERE application.id = ?";
+            $this->db->query($sql, array($id));
+        }
+        
+        public function update_app($id, $completion_date, $after_photo){
+            $sql = "UPDATE `application` SET `completion_date`=?,`after_photo`=?,`status`=1 WHERE id = ?";
+            $this->db->query($sql, array($completion_date, $after_photo, $id));
+        }
+        
+        public function update_reason($id, $rejection_reason){
+            $sql = "UPDATE `application` SET `rejection_reason`=?,`status`=3 WHERE id = ?";
+            $this->db->query($sql, array($rejection_reason, $id));
+        }
     }
 ?>
