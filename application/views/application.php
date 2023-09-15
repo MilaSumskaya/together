@@ -9,7 +9,8 @@
       echo '
   <div class="col">
     <div class="card">
-    <img id="img" src="img/'.$row['after_photo'].'" class="card-img-top"  alt="Выполненная заявка '.$row['id'].'">
+    <img id="after_photo'.$row['id'].'" src="img/'.$row['after_photo'].'" class="card-img-top after_photo"  alt="Выполненная заявка '.$row['id'].'">
+    <img id="before_photo'.$row['id'].'" src="img/'.$row['before_photo'].'" class="card-img-top before_photo"  alt="Выполненная заявка '.$row['id'].'">
       <div class="card-body">
       <h5 class="card-title">'.$row['app_name'].'</h5>
       <p class="card-text">'.$row['description'].'</p>

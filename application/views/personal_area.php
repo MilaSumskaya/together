@@ -19,6 +19,8 @@
         <h1>Ваши заявки</h1>
 </div>
 
+        
+        <div class = "table-responsive">
         <table class="table table-striped table-hover">
             <form>
         <thead>
@@ -40,18 +42,38 @@
           <td>'.$row['app_name'].'</td>
           <td>'.$row['description'].'</td>
           <td>'.$row['name'].'</td>
-          <td>'.$row['status'].'</td>
         ';
         if ($row['status'] == 0){
-            echo '<td><button type="button" class="btn btn-info deleteButton"  data-id="'.$row['id'].'" data-name="'.$row['name'].'" data-bs-toggle="modal" data-bs-target="#applModal">Удалить</button>
+            echo '
+          <td>Новая</td>
+          <td><button type="button" class="btn btn-info deleteButton"  data-id="'.$row['id'].'" data-name="'.$row['name'].'" data-bs-toggle="modal" data-bs-target="#applModal">Удалить</button>
             </td>
           </tr>';
             }
+            elseif ($row['status'] == 1){
+                echo '
+              <td>Решена</td>
+              <td>Нельзя</td>
+              </tr>';
+                }
+                elseif ($row['status'] == 2){
+                    echo '
+                  <td>Принята, ожидайте выполнения</td>
+                  <td>Нельзя</td>
+                  </tr>';
+                    }
+                    elseif ($row['status'] == 3){
+                        echo '
+                      <td>Отклонена</td>
+                      <td>Нельзя</td>
+                      </tr>';
+                        }
     }
     ?>
         </tbody>
     </form>
       </table>
+        </div>
 
   </div>
     <div class="col-1">

@@ -13,15 +13,26 @@ class User extends CI_Controller {
         } else {
 		    $this->load->view('temp/navbar');
         }
-        
-        $this->load->model('category_model');
-        $datac['categories'] = $this->category_model->select_category();
-        $this->load->view('new_application', $datac);
-
         $this->load->model('user_model');
         $data['appl'] = $this->user_model->select_application($id_user);
         $this->load->view('personal_area',$data);
         $this->load->view('modal.php');
+        $this->load->view('temp/footer');
+    }
+    public function new_application(){
+		$this->load->view('temp/header');
+		if ($this->session->userdata('role') == 1){
+            $this->load->view('temp/navbar_user');
+        }
+        else if ($this->session->userdata('role') == 2){
+            $this->load->view('temp/navbar_admin');
+        } else {
+		    $this->load->view('temp/navbar');
+        }
+        
+        $this->load->model('category_model');
+        $datac['categories'] = $this->category_model->select_category();
+        $this->load->view('new_application', $datac);
         $this->load->view('temp/footer');
     }
 

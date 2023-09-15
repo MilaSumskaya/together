@@ -8,6 +8,7 @@
         <h1>Заявки пользователей</h1>
 </div>
 
+        <div class = "table-responsive">
         <table class="table table-striped table-hover">
             <form>
         <thead>
@@ -57,6 +58,7 @@
         </tbody>
     </form>
       </table>
+          </div>
 
   </div>
     <div class="col-1">

@@ -21,6 +21,40 @@ class Admin extends CI_Controller {
         $this->load->view('temp/footer');
     }
 
+    public function sel_cat(){
+		$this->load->view('temp/header');
+		if ($this->session->userdata('role') == 1){
+            $this->load->view('temp/navbar_user');
+        }
+        else if ($this->session->userdata('role') == 2){
+            $this->load->view('temp/navbar_admin');
+        } else {
+		    $this->load->view('temp/navbar');
+        }
+        $this->load->model('category_model');
+        $data['category'] = $this->category_model->select_category();
+        $this->load->view('category',$data);
+        $this->load->view('temp/footer');
+    }
+    public function ins_cat(){
+        if(!empty($_POST)){
+            $name = $_POST['name'];
+            $this->load->model('category_model');
+            $this->category_model->ins_category($name);
+
+            redirect('admin/sel_cat');
+        }
+    }
+    public function del_cat(){
+        if(!empty($_POST)){
+            $id_category = $_POST['id_category'];
+            $this->load->model('category_model');
+            $this->category_model->del_category($id_category);
+
+            redirect('admin/sel_cat');
+        }
+    }
+
     public function upd_app_two(){
         if(!empty($_GET['id'])){
             $id = $_GET['id'];

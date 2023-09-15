@@ -17,6 +17,7 @@
       <script src="js/reg.js"></script>
       <script src="js/modal.js"></script>
       <script src="js/modal_img.js"></script>
+      <script src="js/update_foto.js"></script>
 
     <title>Сделаем лучше вместе</title>
 </head>

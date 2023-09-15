@@ -1,6 +1,9 @@
 $(document).ready(function(){
     // document.getElementById('submit').disabled = !document.getElementById('input').checked;
-    document.getElementById('submit').disabled = !document.getElementById('pers').checked;
+
+    if(document.getElementById("pers") !== null){
+    document.getElementById('submit').disabled = !document.getElementById("pers").checked;
+    }
     $("#input").click(function(){
         reg();
     })
