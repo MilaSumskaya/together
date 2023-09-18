@@ -42,5 +42,12 @@
             $sql = "UPDATE `application` SET `rejection_reason`=?,`status`=3 WHERE id = ?";
             $this->db->query($sql, array($rejection_reason, $id));
         }
+
+        public function select_application_v() {
+            $sql = "SELECT COUNT(*) as colvo FROM `application` WHERE application.status = 1";
+
+            $result = $this->db->query($sql);
+           return $result->result_array();
+        }
     }
 ?>

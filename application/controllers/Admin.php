@@ -101,7 +101,6 @@ class Admin extends CI_Controller {
             $rejection_reason = $_POST['rejection_reason'];
     
             $this->load->model('application_model');
-            var_dump($id);
             $user = $this->application_model->update_reason($id, $rejection_reason);
             redirect('admin/admin_area');
         }

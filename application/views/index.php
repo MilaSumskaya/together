@@ -1,5 +1,8 @@
-<div class="sample-section">
-    <p>Количество решенных заявок: </p>
+<div class="sample-section"><?php
+  foreach($application as $row) {
+        echo 'Количество решенных заявок: '.$row['colvo'].'';
+    }
+    ?>
 
 </div>
 </div>

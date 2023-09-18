@@ -13,8 +13,9 @@ class Main extends CI_Controller {
         } else {
 		    $this->load->view('temp/navbar');
         }
-		$this->load->view('index');
         $this->load->model('application_model');
+        $datac['application'] = $this->application_model->select_application_v();
+        $this->load->view('index',$datac);
         $data['app'] = $this->application_model->select_application();
         $this->load->view('application',$data);
         $this->load->view('temp/footer');
