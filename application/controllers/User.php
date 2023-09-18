@@ -9,9 +9,9 @@ class User extends CI_Controller {
             $this->load->view('temp/navbar_user');
         }
         else if ($this->session->userdata('role') == 2){
-            $this->load->view('temp/navbar_admin');
+            redirect('main/index');
         } else {
-		    $this->load->view('temp/navbar');
+		    redirect('main/index');
         }
         $this->load->model('user_model');
         $data['appl'] = $this->user_model->select_application($id_user);
@@ -25,9 +25,9 @@ class User extends CI_Controller {
             $this->load->view('temp/navbar_user');
         }
         else if ($this->session->userdata('role') == 2){
-            $this->load->view('temp/navbar_admin');
+            redirect('main/index');
         } else {
-		    $this->load->view('temp/navbar');
+		    redirect('main/index');
         }
         
         $this->load->model('category_model');

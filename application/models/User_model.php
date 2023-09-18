@@ -2,7 +2,7 @@
     class User_model extends CI_Model {
 //Регистрация
         public function insert_user($pfio, $plogin, $pemail, $ppassword) {
-            $sql = "call insert_user(?,?,?,?)";
+            $sql = "INSERT INTO `user`(`full_name`, `login`, `email`, `password`, `role`) VALUES (?,?,?,?,1)";
             $result = $this->db->query($sql, array($pfio, $plogin, $pemail, $ppassword));
             
             return $this->db->insert_id();

@@ -5,12 +5,12 @@ class Admin extends CI_Controller {
     public function admin_area(){
 		$this->load->view('temp/header');
 		if ($this->session->userdata('role') == 1){
-            $this->load->view('temp/navbar_user');
+            redirect('main/index');
         }
         else if ($this->session->userdata('role') == 2){
             $this->load->view('temp/navbar_admin');
         } else {
-		    $this->load->view('temp/navbar');
+				redirect('main/index');
         }
         
         $this->load->model('application_model');
@@ -24,12 +24,12 @@ class Admin extends CI_Controller {
     public function sel_cat(){
 		$this->load->view('temp/header');
 		if ($this->session->userdata('role') == 1){
-            $this->load->view('temp/navbar_user');
+            redirect('main/index');
         }
         else if ($this->session->userdata('role') == 2){
             $this->load->view('temp/navbar_admin');
         } else {
-		    $this->load->view('temp/navbar');
+		    redirect('main/index');
         }
         $this->load->model('category_model');
         $data['category'] = $this->category_model->select_category();
